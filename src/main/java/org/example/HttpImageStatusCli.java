@@ -32,8 +32,4 @@ public class HttpImageStatusCli {
             return false;
         }
     }
-
-    public static void main(String[] args) {
-        new HttpImageStatusCli().askStatus();
-    }
 }

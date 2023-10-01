@@ -11,7 +11,7 @@ public class HttpStatusImageDownloader {
     private static final HttpStatusChecker checker = new HttpStatusChecker();
 
     public void downloadStatusImage(int code){
-        String outputFile = ".\\src\\main\\resources\\" + code + ".jpg";
+        String outputFile = ".\\src\\main\\resources\\images\\" + code + ".jpg";
 
         try {
             Connection connection = Jsoup.connect(checker.getStatusImage(code)).ignoreContentType(true);
@@ -26,6 +26,7 @@ public class HttpStatusImageDownloader {
 
             outputStream.close();
             inputStream.close();
+
             System.out.println("Image downloaded and saved as " + outputFile);
         } catch (Exception e){
             System.out.println("There is not image for HTTP status " + code);
